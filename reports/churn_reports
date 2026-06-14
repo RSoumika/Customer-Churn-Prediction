@@ -1,0 +1,123 @@
+EXECUTIVE SUMMARY
+
+This project analyzes customer churn behavior in a telecommunications company using exploratory data analysis and machine learning techniques. The objective was to identify factors influencing customer attrition and develop a predictive model capable of detecting customers at risk of leaving.
+
+The dataset contains 7,043 customer records and 21 attributes. Analysis identified contract type, tenure, monthly charges, and internet service type as major churn drivers. Multiple machine learning models were evaluated, and an optimized Logistic Regression model was selected as the final solution due to its superior ability to identify potential churners.
+
+The final model achieved:
+- Accuracy: 73.35%
+- Recall: 79.41%
+- F1 Score: 61.30%
+
+The solution was deployed as an interactive Streamlit web application for real-time churn prediction.
+
+Data Quality Assessment
+
+- Dataset contains 7,043 customer records and 21 features.
+- TotalCharges was incorrectly stored as a text field and was converted to numeric format.
+- Conversion revealed 11 missing values in TotalCharges.
+- No duplicate records were identified.
+- Churn distribution is imbalanced:
+  - 73.46% of customers stayed.
+  - 26.54% of customers churned.
+- Approximately 1 in 4 customers leave the company, making churn prediction a valuable business problem.
+
+Contract Type Analysis
+
+- Month-to-month customers recorded the highest churn rate at approximately 42.7%.
+- One-year contract customers recorded a churn rate of approximately 11.3%.
+- Two-year contract customers recorded the lowest churn rate at approximately 2.8%.
+- Contract type is a major predictor of customer churn.
+- Long-term contracts significantly improve customer retention.
+- Customer retention programs should prioritize month-to-month subscribers.
+
+Monthly Charges Analysis
+
+- Churned customers exhibit higher monthly charges than retained customers.
+- The median monthly charge for churned customers is significantly greater.
+- Customers with expensive service plans appear more likely to leave.
+- Pricing strategy and service value perception may influence customer retention.
+- MonthlyCharges is expected to be an important predictor in the churn model.
+
+Tenure Analysis
+
+- Churned customers have significantly lower tenure than retained customers.
+- The median tenure of churned customers is approximately 10 months.
+- The median tenure of retained customers is approximately 38 months.
+- Most customer churn occurs during the early stages of the customer lifecycle.
+- Long-term customers demonstrate substantially stronger retention.
+- Tenure is expected to be one of the strongest predictors in the churn model.
+
+Internet Service Analysis
+
+- Fiber Optic customers exhibit the highest churn rate at approximately 42%.
+- DSL customers exhibit a significantly lower churn rate at approximately 19%.
+- Customers without internet service demonstrate the strongest retention.
+- Premium internet customers may have higher expectations and greater price sensitivity.
+- InternetService is expected to be an important predictive feature in the churn model.
+
+Key Business Drivers of Churn
+
+The analysis identified four primary factors contributing to customer churn:
+
+- Contract Type
+- Customer Tenure
+- Monthly Charges
+- Internet Service Type
+
+Customers on month-to-month contracts, with low tenure and high monthly charges, exhibited the highest probability of churn. Fiber Optic customers also demonstrated significantly higher churn rates than other customer groups.
+
+Model Comparison
+
+Two machine learning models were evaluated:
+
+1. Logistic Regression
+2. Random Forest Classifier
+
+Results:
+
+- Logistic Regression achieved 78.75% accuracy.
+- Random Forest achieved 78.54% accuracy.
+- Logistic Regression demonstrated higher recall (50.8%) and F1 score (55.96%).
+- Random Forest produced slightly higher precision but failed to identify as many churning customers.
+
+Conclusion:
+
+Logistic Regression was selected as the final model because it provided the best balance between accuracy, recall, and F1 score while identifying a greater number of customers at risk of churn.
+
+Model Optimization
+
+To improve churn detection, Logistic Regression was retrained using class balancing.
+
+Results:
+
+- Accuracy decreased from 78.75% to 73.35%.
+- Recall increased dramatically from 50.8% to 79.41%.
+- F1 Score improved from 55.96% to 61.3%.
+
+Business Impact:
+
+The optimized model identified 297 churning customers compared to only 190 using the standard model.
+
+Although overall accuracy decreased, the model became significantly more effective at identifying customers at risk of leaving, making it more valuable for customer retention initiatives.
+
+Business Recommendations
+
+- Encourage customers to transition from month-to-month contracts to long-term contracts through promotional offers.
+- Implement retention campaigns targeting customers within their first year of service.
+- Review pricing strategies for high monthly charge plans.
+- Improve customer support services and promote technical support subscriptions.
+- Conduct further analysis on Fiber Optic customer satisfaction and service quality.
+- Deploy the churn prediction model as part of customer retention workflows to proactively identify at-risk customers.
+
+Tools and Technologies Used
+- Python
+- Pandas
+- NumPy
+- Matplotlib
+- Scikit-Learn
+- Streamlit
+- Joblib
+- Machine Learning
+- Logistic Regression
+- Random Forest
