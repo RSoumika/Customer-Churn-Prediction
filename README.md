@@ -61,6 +61,9 @@ The final deployed model is:
 
 **Logistic Regression with Class Balancing**
 
+## Live Demo
+
+https://customer-churn-prediction-soumika.streamlit.app/
 ---
 
 ## Model Performance
